@@ -1,11 +1,12 @@
-# FFT of a Complex Waveform
+# Harmonics from a Sampled Complex Wave
 
-The aim of this mini-project is to show how FFT can be performed on a complex wave. 
+The aim of this mini-project is to show how FFT can be performed on a complex wave to obtain the harmonic content.
 
 The project takes into account the restrictions and limitations of a ADC:
   * Resolution: 12 bit
   * Sampling: 4kHz
   * LSB: +-3
+  * Window: 80
  
 The complex wave used for FFT is created on boot using the following specifications:
   * Fundamental: 220Vrms / 315V peak at 50Hz
@@ -55,7 +56,10 @@ is due to the sampling rate of the ADC being 4KHZ and the 40th harmonic being 2k
 
 ### Windows Size
 
-
+The project default window size is 80 samples or one wave form capture of the fundamental.
+Although this works fine the magnitude values can be effected by the ADC lsb.
+Increasing the window size from say 80 to 800 increases the magnitude accuracy as the random  errors caused by
+lsb are averaged out over 10 wave forms captures.
 
 ### Compression of Data
 

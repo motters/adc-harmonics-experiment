@@ -13,7 +13,7 @@ const float stepSize = 0.1221;
 const int lsbError = 3;
 
 // Signals to be generated and analysed
-const int window = 800; // 800 samples from the ADC will be taken
+const int window = 80; // 800 samples from the ADC will be taken
 const int fundamentalFrequency = 50;
 const std::map<int, int> harmonics = {{2, 50}, {4, 25}, {5, 10}, {39, 5}, {40, 10}};
 
