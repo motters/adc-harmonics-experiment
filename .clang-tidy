@@ -1,0 +1,55 @@
+---
+# What checks should we enable and disable
+Checks: >
+  -*,
+  misc-*,
+  google-readability-casting,
+  bugprone-*,
+  -bugprone-misplaced-widening-cast,
+  -bugprone-narrowing-conversions,
+  -bugprone-too-small-loop-variable,
+  modernize-*,
+  -modernize-use-noexcept,
+  -modernize-use-trailing-return-type,
+  -modernize-use-transparent-functors,
+  -modernize-use-nodiscard,
+  -modernize-return-braced-init-list,
+  -modernize-avoid-bind,
+  performance-*,
+  cppcoreguidelines-*,
+  -cppcoreguidelines-avoid-magic-numbers,
+  readability-*,
+  -readability-magic-numbers,
+  -readability-convert-member-functions-to-static,
+  -readability-function-size,
+  -readability-implicit-bool-conversion,
+  -readability-inconsistent-declaration-parameter-name,
+  -readability-named-parameter,
+  -readability-redundant-declaration,
+  -readability-uppercase-literal-suffix,
+  -readability-braces-around-statements,
+
+# Turn all the warnings from the checks above into errors.
+WarningsAsErrors: "*"
+
+# Customise some modules
+CheckOptions:
+  - { key: modernize-use-default-member-init.UseAssignment,      value: '1'        }
+  - { key: modernize-use-equals-default.IgnoreMacros,            value: '0'        }
+  - { key: modernize-use-auto.MinTypeNameLength,                 value: '16'       }
+  - { key: readability-identifier-naming.NamespaceCase,          value: CamelCase  }
+  - { key: readability-identifier-naming.ClassCase,              value: CamelCase  }
+  - { key: readability-identifier-naming.StructCase,             value: CamelCase  }
+  - { key: readability-identifier-naming.TemplateParameterCase,  value: CamelCase  }
+  - { key: readability-identifier-naming.FunctionCase,           value: camelBack  }
+  - { key: readability-identifier-naming.VariableCase,           value: camelBack  }
+  - { key: readability-identifier-naming.ClassMemberCase,        value: camelBack  }
+  - { key: readability-identifier-naming.ClassMemberPrefix,      value: m_         }
+  - { key: readability-identifier-naming.PrivateMemberPrefix,    value: m_         }
+  - { key: readability-identifier-naming.ProtectedMemberPrefix,  value: m_         }
+  - { key: readability-identifier-naming.MacroDefinitionCase,    value: UPPER_CASE }
+  - { key: readability-identifier-naming.EnumConstantCase,       value: CamelCase  }
+  - { key: readability-identifier-naming.ConstexprVariableCase,  value: camelBack  }
+  - { key: readability-identifier-naming.GlobalConstantCase,     value: CamelCase  }
+  - { key: readability-identifier-naming.MemberConstantCase,     value: camelBack  }
+  - { key: readability-identifier-naming.StaticConstantCase,     value: camelBack  }
